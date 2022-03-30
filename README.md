@@ -8,6 +8,5 @@ All features and effects were made using only CSS
 
 The example pictures in this project were getting from Pexels website
 
-The project deploy is on Netlify and the final result can be checked [clicking here](https://instagram-login-clone.netlify.app/) or clicking on gif below
-
+The project deploy is on Netlify and the final result 
 To check the model page: [Instagram](https://www.instagram.com/)
